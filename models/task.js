@@ -27,12 +27,12 @@ const TaskSchema = new mongoose.Schema({
     },
 });
 
-TaskSchema.pre('save', async function(next){
-    const hash = await bcrypt.hash(this.password, 10);
-    this.password = hash;
+// TaskSchema.pre('save', async function(next){
+//     const hash = await bcrypt.hash(this.password, 10);
+//     this.password = hash;
 
-    next();
-});
+//     next();
+// });
 
 const Task = mongoose.model('Task', TaskSchema);
 
